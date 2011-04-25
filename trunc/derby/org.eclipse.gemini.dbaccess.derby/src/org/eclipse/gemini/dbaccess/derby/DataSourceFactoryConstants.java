@@ -24,10 +24,13 @@ public class DataSourceFactoryConstants  {
     public static final String DERBY_EMBEDDED_DRIVER_CLASS = "org.apache.derby.jdbc.EmbeddedDriver";
     public static final String DERBY_CLIENT_DRIVER_CLASS = "org.apache.derby.jdbc.ClientDriver";
 
-    // Register all Derby factory services under this driver name
+    // All Derby DataSourceFactory services will have their
+    // DataSourceFactory.OSGI_JDBC_DRIVER_NAME property set to this driver name
     public static final String DERBY_DRIVER_NAME = "Derby";
 
-    // Register under the JDBC version the driver supports
+    // Derby DataSourceFactory service will have its 
+    // DataSourceFactory.OSGI_JDBC_DRIVER_VERSION property
+    // set to the JDBC version it supports
     public static final String JDBC_3_DRIVER_VERSION = "3.0";
     public static final String JDBC_4_DRIVER_VERSION = "4.0";
 }

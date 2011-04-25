@@ -10,7 +10,7 @@
  * You may elect to redistribute this code under either of these licenses.
  *
  * Contributors:
- *     mkeith - Gemini DBAccess examples 
+ *     mkeith, jkissner - Gemini DBAccess examples 
  ******************************************************************************/
 package org.eclipse.gemini.dbaccess.samples;
 
@@ -33,7 +33,7 @@ import org.osgi.service.jdbc.DataSourceFactory;
 /**
  * Example of how to access a DataSource from a client program
  * 
- * @author mkeith
+ * @author mkeith, jkissner
  */
 public class DataSourceClientExample implements BundleActivator, ServiceTrackerCustomizer {
 
@@ -72,6 +72,8 @@ public class DataSourceClientExample implements BundleActivator, ServiceTrackerC
 
             // We have a JDBC service, now do something with it
             DataSourceFactory dsf = (DataSourceFactory) service;
+            useEmbeddedDataSourceWithURL(dsf);
+            log("");
             useEmbeddedDataSource(dsf);
         }
         return service;
@@ -83,9 +85,43 @@ public class DataSourceClientExample implements BundleActivator, ServiceTrackerC
 
     /* === Supporting methods === */
 
-    void useEmbeddedDataSource(DataSourceFactory dsf) {
+    private static void useEmbeddedDataSourceWithURL(DataSourceFactory dsf) {
         Properties props = new Properties();
-        props.put(DataSourceFactory.JDBC_URL, "jdbc:derby:testDB;create=true");
+        String URL = "jdbc:derby:testDB;create=true";
+        props.put(DataSourceFactory.JDBC_URL, URL);
+        DataSource ds = null;
+        Connection conn = null;
+        try {
+        	log("Sample Gemini DBAccess client URL access using properties:" + 
+                    "\n\t" + DataSourceFactory.JDBC_URL + " = " + URL);
+            ds = dsf.createDataSource(props);
+            conn = ds.getConnection();
+            DatabaseMetaData metadata = conn.getMetaData();
+            log("Driver accessed by sample Gemini DBAccess client:" + 
+                "\n\tName = " + metadata.getDriverName() +
+                "\n\tVersion = " + metadata.getDriverVersion() +
+                "\n\tUser = " + metadata.getUserName());
+            conn.close();
+            log("Sample Gemini DBAccess client - Connection closed");
+        } catch (SQLException sqlEx) {
+            log("Sample Gemini DBAccess client - Error creating or using data source: " + sqlEx);
+        }
+    }
+
+    private static void useEmbeddedDataSource(DataSourceFactory dsf) {
+        Properties props = new Properties();
+        String databaseName = "testDB";
+        props.put(DataSourceFactory.JDBC_DATABASE_NAME, databaseName);
+        props.put("createDatabase", "true");
+//      props.put(DataSourceFactory.JDBC_SERVER_NAME, "localhost");
+//      props.put(DataSourceFactory.JDBC_PORT_NUMBER, "1527");
+//      props.put(DataSourceFactory.JDBC_USER, "app");
+//      props.put(DataSourceFactory.JDBC_PASSWORD, "app");
+    	log("Sample Gemini DBAccess client access using properties:" + 
+                "\n\t" + DataSourceFactory.JDBC_DATABASE_NAME + " = " + databaseName +
+                "\n\t" + "createDatabase" + " = " + "true" 
+                );
+        props.put("createDatabase", "true");
         DataSource ds = null;
         Connection conn = null;
         try {
@@ -97,10 +133,13 @@ public class DataSourceClientExample implements BundleActivator, ServiceTrackerC
                 "\n\tVersion = " + metadata.getDriverVersion() +
                 "\n\tUser = " + metadata.getUserName());
             conn.close();
+            log("Sample Gemini DBAccess client - Connection closed");
         } catch (SQLException sqlEx) {
             log("Sample Gemini DBAccess client - Error creating or using data source: " + sqlEx);
         }
     }
-    
-    void log(String msg) { System.out.println("===== " + msg); }
+
+    private static void log(String msg) { 
+    	System.out.println("===== " + msg); 
+    }
 }

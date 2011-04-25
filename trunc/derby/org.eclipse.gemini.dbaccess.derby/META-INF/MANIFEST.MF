@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Gemini DBAccess (Incubation)
+Bundle-Name: Gemini DBAccess
 Bundle-SymbolicName: org.eclipse.gemini.dbaccess.derby
-Bundle-Version: 1.0.0.M1-incubation
+Bundle-Version: 1.0.0.RC1
 Bundle-Activator: org.eclipse.gemini.dbaccess.derby.Activator
 Bundle-Vendor: Oracle Corporation
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
