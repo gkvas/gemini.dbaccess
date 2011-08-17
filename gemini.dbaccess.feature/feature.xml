@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.gemini.dbaccess.feature"
+      label="%featureName"
+      version="1.0.0.RC2"
+      provider-name="%providerName"
+      plugin="org.eclipse.gemini.dbaccess.derby">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/TODO/update-site/"/>
+   </url>
+
+   <plugin
+         id="osgi.enterprise"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.derby"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gemini.dbaccess.derby"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.RC2"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.gemini.dbaccess.samples"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.RC2"
+         unpack="false"/>
+
+</feature>

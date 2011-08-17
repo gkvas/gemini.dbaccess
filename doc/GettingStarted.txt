@@ -1,0 +1,88 @@
+Getting Started with Gemini DBAccess 
+------------------------------------
+
+Gemini DBAccess provides a way for a database to be accessed through JDBC in a modular environment like OSGi.
+
+
+Required Bundles
+----------------
+
+To run Gemini DBAccess in OSGi you will need to have the following:
+
+1. OSGi Framework
+
+You may use Plugin Development Environment (PDE) in Eclipse, which will give you access to the Equinox 
+OSGi framework, or you may execute outside of PDE and use any OSGi framework you choose, such as Felix.
+
+2. Database and JDBC driver
+
+You should have installed and started your database server. DBAccess bundles do not start databases or servers. 
+It is assumed that such servers are already running. If the driver is not already OSGi-ready then you may need 
+to create a bundle. If the drivers have been packaged with DBAccess then you will not need additional copies.
+
+*** Note: The JDBC drivers for the Derby embedded database are shipped with Gemini DBAccess.
+
+3. OSGi Enterprise API bundle
+
+Some of the OSGi Enterprise APIs are used by DBAccess so the osgi.enterprise bundle must be resident. It normally 
+includes both the source and the class files so it can be used for both execution and debugging. It can be obtained
+here: http://www.osgi.org/Download/Release4V42
+
+*** Note: This bundle is shipped with Gemini DBAccess.
+
+4. The Gemini DBAccess bundles
+
+There are typically two bundles for each supported database. The first bundle is the JDBC driver bundle 
+and includes the JDBC driver code. If a driver is already OSGi-ready then it should be bundlized
+appropriately. If the driver is not already in an appropriate OSGi bundle then DBAccess will either provide 
+one, or explain how to create one, depending upon whether the driver JARs may be distributed or not.
+
+The second bundle is a DBAccess bundle that contains all of the logic to implement and register the 
+DataSourceFactory service as specified by the OSGi JDBC specification.
+
+For example, the following bundles provide support for the Derby client/server database: 
+
+1. org.apache.derby - the derby JDBC driver jars
+2. org.eclipse.gemini.dbaccess.derby - the Gemini supporting classes for Derby
+
+*** Note: These bundles are shipped with Gemini DBAccess.
+
+Maven Build
+-----------
+
+1) Install Maven 3.
+2) You may need to configure the proxy settings. In case you are behind a firewall, edit the file 
+/mvn_parent/settings.xml and replace the TODOs with the right proxy settings.
+3) To execute the build, go into /mvn_parent and run on the command line:
+> mvn clean install
+or, if you have configured the settings.xml:
+> mvn -fae -s settings.xml clean install
+
+
+Some remarks on what the build does:
+- the folder /mvn_parent contains a pom.xml which is the "parent" of all
+subprojects. Every bundle which is build has its own pom.xml file
+- it builds every bundle (result as usually for maven is under /target in the
+respective directory)
+- A feature, which currently includes everything except the tests, is also built.
+- An update site is generated: /gemini.dbaccess.updatesite . When this is build, you
+should find there under /target/site/ a p2 repository containing the feature
+and all plugins included into it. 
+- currently not all tests are executed
+- If you add findbugs:findbugs at the end of the command line, you'll find in the different
+/target directories which are produced some information from findbugs. This could be aggregated 
+and displayed in late stage by Hudson. To try it, just run:
+> mvn clean install findbugs:findbugs
+or, if you have configured the settings.xml:
+> mvn -fae -s settings.xml clean install findbugs:findbugs
+
+
+Installation
+------------
+
+If running in PDE then import the various bundles (the framework will already be there) as plug-ins 
+into your workspace. If you are not using PDE, but are using the framework directly then follow the 
+documentation of the framework for installing the bundles.
+
+To run compile the projects in Eclipse, you have to open the gemini.dbaccess.targetdef project, 
+open the file gemini.dbaccess.target with the Target Editor and execute "Set as Target Platform"

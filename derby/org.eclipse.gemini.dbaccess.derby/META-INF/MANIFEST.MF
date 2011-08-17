@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Gemini DBAccess
+Bundle-SymbolicName: org.eclipse.gemini.dbaccess.derby
+Bundle-Version: 1.0.0.RC2
+Bundle-Activator: org.eclipse.gemini.dbaccess.derby.Activator
+Bundle-Vendor: Eclipse Gemini
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Import-Package: javax.sql,
+ org.apache.derby.client.am,
+ org.apache.derby.jdbc,
+ org.osgi.framework;version="[1.3,2)",
+ org.osgi.service.jdbc;version="[1.0,2.0)"
+Bundle-ActivationPolicy: lazy
+
+
