@@ -19,7 +19,7 @@
    </license>
 
    <url>
-      <update label="%updateSiteName" url="http://download.eclipse.org/TODO/update-site/"/>
+      <update label="%updateSiteName" url="http://download.eclipse.org/gemini/dbaccess/update-site/"/>
    </url>
 
    <plugin
