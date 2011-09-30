@@ -18,11 +18,11 @@
   <parent>
     <groupId>org.eclipse</groupId>
     <artifactId>gemini.dbaccess.parent</artifactId>
-    <version>1.0.0.RC2</version>
+    <version>1.0.0.RELEASE</version>
     <relativePath>../../mvn_parent</relativePath>
   </parent>
 
   <artifactId>org.eclipse.gemini.dbaccess.derby</artifactId>
-    <version>1.0.0.RC2</version>
+    <version>1.0.0.RELEASE</version>
   <packaging>eclipse-plugin</packaging>
 </project>

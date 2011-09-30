@@ -1,7 +1,7 @@
 
-Gemini DBAccess Release Candidate
+Gemini DBAccess Release 1.0.0
 
-This Release Candidate provides you with database access to the server Derby database version 10.5.1. 
+This release provides you with database access to the server Derby database version 10.5.1. 
 To access other versions of Derby you may need to replace the derby.jar and derbyclient.jar 
 driver jars inside the org.apache.derby bundle with the version that you require.
 

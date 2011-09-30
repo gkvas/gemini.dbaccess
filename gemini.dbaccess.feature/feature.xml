@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.gemini.dbaccess.feature"
       label="%featureName"
-      version="1.0.0.RC2"
+      version="1.0.0.RELEASE"
       provider-name="%providerName"
       plugin="org.eclipse.gemini.dbaccess.derby">
 
@@ -40,14 +40,14 @@
          id="org.eclipse.gemini.dbaccess.derby"
          download-size="0"
          install-size="0"
-         version="1.0.0.RC2"
+         version="1.0.0.RELEASE"
          unpack="false"/>
 
    <plugin
          id="org.eclipse.gemini.dbaccess.samples"
          download-size="0"
          install-size="0"
-         version="1.0.0.RC2"
+         version="1.0.0.RELEASE"
          unpack="false"/>
 
 </feature>
