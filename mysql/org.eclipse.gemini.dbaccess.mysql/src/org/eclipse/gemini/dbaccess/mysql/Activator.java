@@ -22,7 +22,8 @@ public class Activator implements BundleActivator {
         Hashtable<String,String> props = new Hashtable<String,String>();
         props.put(DataSourceFactory.OSGI_JDBC_DRIVER_NAME, 
                   MySqlServiceProperties.MYSQL_DRIVER_NAME);    
-        
+        props.put(DataSourceFactory.OSGI_JDBC_DRIVER_CLASS,
+        		MySqlServiceProperties.MYSQL_DRIVER_CLASS);        
         dsfService = context.registerService( 
                 DataSourceFactory.class.getName(),
                 new ClientDataSourceFactory(),
