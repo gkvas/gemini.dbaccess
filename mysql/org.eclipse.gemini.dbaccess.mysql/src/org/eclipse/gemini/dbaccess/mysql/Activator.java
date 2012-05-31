@@ -18,7 +18,6 @@ public class Activator implements BundleActivator {
     private ServiceRegistration dsfService;	
 	
     public void start(BundleContext context) throws Exception {
-        System.out.println("Gemini DBAccess - MySQL JDBC starting");
         Hashtable<String,String> props = new Hashtable<String,String>();
         props.put(DataSourceFactory.OSGI_JDBC_DRIVER_NAME, 
                   MySqlServiceProperties.MYSQL_DRIVER_NAME);    

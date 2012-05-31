@@ -34,7 +34,6 @@ public class Activator implements BundleActivator {
     private ServiceRegistration embeddedService, clientService, embeddedService4, clientService4;	
 	
     public void start(BundleContext context) throws Exception {
-        System.out.println("Gemini DBAccess - Derby JDBC starting");
         Hashtable<String,String> props = new Hashtable<String,String>();
         props.put(DataSourceFactory.OSGI_JDBC_DRIVER_NAME, 
                   DerbyServiceProperties.DERBY_DRIVER_NAME);
