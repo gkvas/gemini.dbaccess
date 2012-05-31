@@ -9,7 +9,7 @@ Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Import-Package: javax.sql,
  org.apache.derby.client.am,
  org.apache.derby.jdbc,
- org.eclipse.gemini.dbaccess,
+ org.eclipse.gemini.dbaccess;version="[1.1.0,1.2.0)",
  org.osgi.framework;version="[1.3,2)",
  org.osgi.service.jdbc;version="[1.0,2.0)"
 Bundle-ActivationPolicy: lazy
