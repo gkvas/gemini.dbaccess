@@ -17,10 +17,12 @@ package org.eclipse.gemini.dbaccess;
 
 import java.io.PrintWriter;
 import java.util.Properties;
+import java.util.logging.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Driver;
+import java.sql.SQLFeatureNotSupportedException;
 
 import static org.osgi.service.jdbc.DataSourceFactory.*;
 
@@ -82,4 +84,9 @@ class UrlBasedDriverDataSource implements javax.sql.DataSource {
     public void setLoginTimeout(int timeout) throws SQLException {
         throw new SQLException("Can't set Login Timeout on URL data source");
     }
+
+	
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return this.driver.getParentLogger();
+	}
 }

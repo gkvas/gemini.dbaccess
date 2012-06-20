@@ -3,6 +3,8 @@ package com.mysql.jdbc.jdbc2.optional;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -53,6 +55,11 @@ public class MysqlDataSource implements DataSource {
 	@Override
 	public Connection getConnection(String arg0, String arg1)
 			throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
 		// TODO Auto-generated method stub
 		return null;
 	}

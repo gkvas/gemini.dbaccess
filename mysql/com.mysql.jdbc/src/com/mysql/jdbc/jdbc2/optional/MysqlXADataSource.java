@@ -2,6 +2,8 @@ package com.mysql.jdbc.jdbc2.optional;
 
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.sql.XAConnection;
 import javax.sql.XADataSource;
@@ -41,6 +43,11 @@ public class MysqlXADataSource implements XADataSource {
 	@Override
 	public XAConnection getXAConnection(String arg0, String arg1)
 			throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
 		// TODO Auto-generated method stub
 		return null;
 	}

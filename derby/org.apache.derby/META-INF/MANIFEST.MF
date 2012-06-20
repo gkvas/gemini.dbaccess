@@ -9,7 +9,7 @@ Import-Package: javax.sql,javax.net,
  javax.transaction,javax.transaction.xa,
  org.osgi.framework;version="1.3.0"
 DynamicImport-Package: *
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ClassPath: .,
  derby.jar,
  derbyclient.jar
