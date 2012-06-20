@@ -86,7 +86,7 @@ class UrlBasedDriverDataSource implements javax.sql.DataSource {
     }
 
 	
-	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
-        return this.driver.getParentLogger();
-	}
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        throw new SQLFeatureNotSupportedException("Can't get Parent Logger from URL data source");
+    }
 }
