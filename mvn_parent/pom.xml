@@ -38,10 +38,13 @@
 	<module>../derby/org.eclipse.gemini.dbaccess.derby</module>
 	<module>../mysql/com.mysql.jdbc</module>
 	<module>../mysql/org.eclipse.gemini.dbaccess.mysql</module>
+	<module>../h2/org.h2</module>
+	<module>../h2/org.eclipse.gemini.dbaccess.h2</module>
 	<module>../samples/org.eclipse.gemini.dbaccess.samples</module>
  	<module>../test/org.eclipse.gemini.dbaccess.test</module>
 	<module>../gemini.dbaccess.feature</module>
 	<module>../gemini.dbaccess.mysql.feature</module>
+	<module>../gemini.dbaccess.h2.feature</module>
 	<module>../gemini.dbaccess.updatesite</module>
   </modules>
 
