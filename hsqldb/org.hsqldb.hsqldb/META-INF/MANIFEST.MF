@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: HSQLDB Mock
+Bundle-SymbolicName: org.hsqldb.hsqldb
+Bundle-Version: 0.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: 
+ javax.sql
+Export-Package: org.hsqldb.jdbc,
+ org.hsqldb.jdbc.pool

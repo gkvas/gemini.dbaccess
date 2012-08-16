@@ -43,6 +43,9 @@
 	<module>../gemini.dbaccess.feature</module>
 	<module>../gemini.dbaccess.mysql.feature</module>
 	<module>../gemini.dbaccess.updatesite</module>
+	<module>../hsqldb/org.hsqldb.hsqldb</module>
+	<module>../hsqldb/org.eclipse.gemini.dbaccess.hsqldb</module>
+	<module>../gemini.dbaccess.hsqldb.feature</module>
   </modules>
 
 
