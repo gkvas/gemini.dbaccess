@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: H2 Mock
+Bundle-SymbolicName: org.h2
+Bundle-Version: 0.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: 
+ javax.sql
+Export-Package: org.h2,
+ org.h2.jdbcx
