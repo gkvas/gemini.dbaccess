@@ -33,8 +33,8 @@ import org.hsqldb.jdbc.pool.JDBCXADataSource;
  * This service supports a URL-based data source. The following 3 properties
  * need to provided.
  * 
- * props.put(DataSourceFactory.JDBC_URL, "jdbc:h2:tcp://dbserv:8084/sample");
- * props.put(DataSourceFactory.JDBC_USER, "mike");
+ * props.put(DataSourceFactory.JDBC_URL, "jdbc:hsqldb:hsql://localhost/enrolments");
+ * props.put(DataSourceFactory.JDBC_USER, "user");
  * props.put(DataSourceFactory.JDBC_PASSWORD, "password");
  * 
  */
